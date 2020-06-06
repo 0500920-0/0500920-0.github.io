@@ -162,8 +162,37 @@ nav ul li:hover {
     font-size: 1.5rem;
     padding-bottom: 1rem;
 }
-.content section a:hover article {
+.content section article:hover {
     box-shadow: 0px 4px 8px grey;
+}
+
+/* add external link icon */
+.content section a article header::after {
+    content: url('../img/link.svg');
+    padding-left: 0.5rem;
+}
+
+/* add photo and description */
+.content article img {
+    width: 100%;
+}
+.content article img + span {
+    display: inline-block;
+    font-size: 8px;
+    color: lightgrey;
+    padding-bottom: 1rem;
+}
+
+/* photo cropping */
+#hackathon {
+    height: 250px;
+    object-fit: cover;
+    object-position: bottom;
+}
+#ai {
+    height: 350px;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 /* footer */
