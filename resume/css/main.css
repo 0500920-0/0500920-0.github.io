@@ -1,0 +1,275 @@
+/* style normalizer and font family */
+@font-face {
+  font-family: "Open Huninn";
+  src: url("./jf-openhuninn-1.1.ttf");
+}
+* {
+    margin: 0;
+    font-family: "Open Huninn", sans-serif;
+}
+
+/* global variables */
+:root {
+    --backdrop-height: 256px;
+    --avatar-side: 128px;
+    --header-height: 64px;
+    --icon-side: 16px;
+}
+
+/* backdrop and avatar */
+.backdrop {
+    background: url("./../img/drunken_moon_lake.jpg");
+    height: var(--backdrop-height);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.backdrop img.avatar {
+    background: white;
+    width: var(--avatar-side);
+    height: var(--avatar-side);
+    object-fit: cover;
+
+    object-position: 0 -8px;
+    border-radius: 50%;
+    position: absolute;
+
+    top: calc( var(--backdrop-height) + var(--header-height) - var(--avatar-side) - 8px );
+    left: calc( 50% - var(--avatar-side)/2 );
+
+    z-index: 30;
+
+    border: 4px solid white;
+    box-shadow: 0px 0px 16px grey;
+}
+
+/* header */
+#header {
+    position: sticky;
+    top: 0;
+
+    color: white;
+    background: teal;
+
+    /* to make the text centered vertically */
+    line-height: var(--header-height);
+    height: var(--header-height);
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    box-shadow: 0px 0px 8px grey;
+}
+#header h2 {
+    display: inline;
+    font-weight: normal;
+}
+#header .menu {
+    float: right;
+    font-weight: bold;
+    cursor: pointer;
+
+    /* Ref.: https://stackoverflow.com/questions/6351013/can-i-stretch-text-using-css */
+    transform: scaleX(1.5);
+}
+
+/* main content */
+.content {
+    margin: 1rem;
+    z-index: -1;
+}
+.content nav, main, footer {
+    padding: 1rem;
+}
+
+/* smartphone navigation */
+#header nav {
+    line-height: initial;
+    color: black;
+    padding: 1rem;
+
+    display: block;
+
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+
+    position: absolute;
+    right: 1rem;
+    top: calc( var(--header-height) + 5px );
+    width: 128px;
+    z-index: 40;
+
+    background: white;
+    box-shadow: 0 0 8px grey;
+    border-radius: 8px;
+}
+#header nav.show {
+    opacity: 1;
+}
+.content nav {
+    display: none;
+}
+
+/* both navigation list */
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    
+    border-bottom: .5px solid lightgrey;
+}
+nav ul:nth-last-child(1) {
+    border-bottom: none;
+}
+nav ul li {
+    padding: 8px;
+    border-radius: 4px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+nav ul li:hover {
+    background-color: lightgrey;
+}
+
+/* section blocks */
+.content section > header {
+    padding: 1rem;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content section a {
+    color: black;
+    text-decoration: none;
+}
+
+/* article cards */
+.content article {
+    background: white;
+    box-shadow: 0px 2px 4px grey;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.1s ease-in;
+}
+.content article > header {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+.content section article:hover {
+    box-shadow: 0px 4px 8px grey;
+}
+
+/* add external link icon */
+.content section a article header::after {
+    content: url('../img/link.svg');
+    padding-left: 0.5rem;
+}
+
+/* add photo and description */
+.content article img {
+    width: 100%;
+}
+.content article img + span {
+    display: inline-block;
+    font-size: 12px;
+    color: lightgrey;
+    padding-bottom: 1rem;
+}
+
+/* photo cropping */
+#hackathon {
+    height: 250px;
+    object-fit: cover;
+    object-position: bottom;
+}
+#ai {
+    height: 350px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* footer */
+footer a {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+
+    color: black;
+    text-decoration: none;
+    opacity: .5;
+}
+footer img {
+    width: var(--icon-side);
+    height: var(--icon-side);
+}
+
+/* handle larger screen */
+@media(min-width: 720px) {
+    :root {
+        --backdrop-height: 40vh;
+        --avatar-side: 192px;
+        --avatar-left: 3rem;
+    }
+    .backdrop img.avatar {
+        left: var(--avatar-left);
+    }
+    #header {
+        padding-left: calc( var(--avatar-left) + var(--avatar-side) + 2rem);
+    }
+    #header .menu {
+        display: none;
+    }
+    #header nav {
+        display: none;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+    }
+
+    .content nav {
+        flex: 2;
+        max-width: 180px;
+        display: block;
+        padding-right: 4rem;
+
+        position: sticky;
+        /* top: calc( var(--avatar-side) + 1rem ); */
+        top: var(--header-height);
+
+        background: none;
+        box-shadow: none;
+        border-radius: none;
+
+        align-self: start;
+    }
+    .content main {
+        flex: 8;
+        max-width: 720px;
+        /* position: relative; */
+    }
+    /* .content section header {
+        position: sticky;
+        top: 0;
+    } */
+    .content footer {
+        flex: 2;
+        max-width: 180px;
+        text-align: right;
+        padding-left: 4rem;
+
+        position: sticky;
+        top: var(--header-height);
+
+        align-self: start;
+    }
+}
