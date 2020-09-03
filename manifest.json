@@ -1,6 +1,6 @@
 {
-  "short_name": "隨便啦",
-  "name": "隨便弄ㄉ網頁🤣",
+  "short_name": "馮明佑",
+  "name": "馮明佑 隨便弄的網頁🤣",
   "icons": [
     {
       "src": "tubaAvatar192.png",
@@ -15,6 +15,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#00796b",
   "background_color": "#000000"
 }
