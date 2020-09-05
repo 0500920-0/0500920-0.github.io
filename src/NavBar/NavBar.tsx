@@ -12,7 +12,7 @@ import UpperRightMenu from './UpperRightMenu';
 import LanguageMenu from './LanguageMenu';
 import BrightnessButton from './BrightnessButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import GithubIcon from '@material-ui/icons/GitHub';
+// import GithubIcon from '@material-ui/icons/GitHub';
 import ScienceIcon from '../icons/Science';
 
 import { useTranslation } from '../hooks/TranslationContext';
@@ -87,7 +87,7 @@ export default function NavBar({ toggleDrawer, isDarkTheme, setDarkTheme, title,
             <LinkButton path="/random" title={translation?.random?.title} startIcon={<ExploreIcon />} />
             <LinkButton path="/about" title={translation?.about?.title} startIcon={<InfoIcon />}  /> */}
             <LanguageMenu showText />
-            <IconButton
+            {/* <IconButton
               color="inherit"
               aria-label="open link: github 0500920-0"
               href="https://github.com/0500920-0/"
@@ -95,7 +95,7 @@ export default function NavBar({ toggleDrawer, isDarkTheme, setDarkTheme, title,
               rel="noopener noreferrer"
             >
               <GithubIcon />
-            </IconButton>
+            </IconButton> */}
           </Hidden>
           <Hidden mdUp implementation="css">
             <LanguageMenu />

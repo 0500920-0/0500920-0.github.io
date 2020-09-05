@@ -1,8 +1,8 @@
 export default {
     loading: 'Load 緊……',
     getTitle (pageTitle?: string) {
-        if (!pageTitle || pageTitle === this?.home?.title) return '馮明佑 求其整嘅網頁🤣'
-        return `${pageTitle} — 馮明佑 求其整嘅網頁🤣`
+        if (!pageTitle || pageTitle === this?.home?.title) return '馮明佑 求其整嘅網頁🤣';
+        return `${pageTitle} — 馮明佑 求其整嘅網頁🤣`;
     },
     contentCard: {
         external: '網頁',
@@ -10,7 +10,8 @@ export default {
     },
     upperRightMenu: {
         lastPage: '上一頁',
-        forceReload: '格硬 (?) Reload',
+        forceReload: '重新整理',
+        print: '列印...',
     },
     home: {
         title: '首頁',
@@ -110,5 +111,8 @@ export default {
     profile: { // external
         title: '關於我',
         description: '履歷 | 前端程式設計堂功課',
+    },
+    github: { // external
+        title: 'GitHub',
     },
 };

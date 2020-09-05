@@ -21,6 +21,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import ExploreIcon from '@material-ui/icons/Explore';
 import InfoOutlined from '@material-ui/icons/InfoOutlined';
 import LaunchIcon from '@material-ui/icons/Launch';
+import GithubIcon from '@material-ui/icons/GitHub';
 import ScienceIcon from '../icons/Science';
 
 import DrawerItem from './DrawerItem';
@@ -71,6 +72,7 @@ export default function ResponsiveDrawer({ toggleDrawer, isDrawerOpened, width, 
         <Divider />
         <DrawerItem path="/about" title={translation?.about?.title} startIcon={<InfoOutlined />} />
         <DrawerItem path="https://0500920-0.github.io/resume/index.html" external title={translation?.profile?.title} startIcon={<LaunchIcon />} />
+        <DrawerItem path="https://github.com/0500920-0" external title={translation?.github?.title} startIcon={<GithubIcon />} />
       </List>
     </div>
   );

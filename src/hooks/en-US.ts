@@ -1,8 +1,8 @@
 export default {
     loading: 'Loading...',
     getTitle (pageTitle?: string) {
-        if (!pageTitle || pageTitle === this?.home?.title) return 'Meng Iao Fong 🤣'
-        return `${pageTitle} -- Meng Iao Fong 🤣`
+        if (!pageTitle || pageTitle === this?.home?.title) return 'Meng Iao Fong 🤣';
+        return `${pageTitle} -- Meng Iao Fong 🤣`;
     },
     contentCard: {
         external: 'Link',
@@ -10,7 +10,8 @@ export default {
     },
     upperRightMenu: {
         lastPage: 'Last Page',
-        forceReload: 'Force Refresh',
+        forceReload: 'Refresh',
+        print: 'Print...',
     },
     home: {
         title: 'Home',
@@ -110,5 +111,8 @@ export default {
     profile: { // external
         title: 'Profile',
         description: 'Resume | HW of Frontend Programming',
+    },
+    github: { // external
+        title: 'GitHub',
     },
 };

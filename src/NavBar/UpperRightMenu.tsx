@@ -10,6 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import RefreshIcon from '@material-ui/icons/Refresh';
+import PrintIcon from '@material-ui/icons/Print';
 import { useTranslation } from '../hooks/TranslationContext';
 
 export default function UpperRightMenu() {
@@ -62,6 +63,12 @@ export default function UpperRightMenu() {
             <RefreshIcon fontSize="small" />
           </ListItemIcon>
           {translation?.upperRightMenu?.forceReload}
+        </MenuItem>
+        <MenuItem onClick={() => window.print()}>
+          <ListItemIcon>
+            <PrintIcon fontSize="small" />
+          </ListItemIcon>
+          {translation?.upperRightMenu?.print}
         </MenuItem>
       </Menu>
     </div>
